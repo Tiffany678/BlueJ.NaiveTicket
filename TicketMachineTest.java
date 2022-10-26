@@ -1,9 +1,9 @@
 
 
-import static org.junit.Assert.*;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 /**
  * The test class TicketMachineTest.
@@ -19,54 +19,24 @@ public class TicketMachineTest
     public TicketMachineTest()
     {
     }
-    
-    @Before
+
+    /**
+     * Sets up the test fixture.
+     *
+     * Called before every test case method.
+     */
+    @BeforeEach
     public void setUp()
     {
     }
-    
-    @After
+
+    /**
+     * Tears down the test fixture.
+     *
+     * Called after every test case method.
+     */
+    @AfterEach
     public void tearDown()
     {
     }
-    
-    @Test
-    public void insertMoneyTest(){
-        TicketMachine testTicketMachine = new TicketMachine(4);
-        
-        testTicketMachine.insertMoney(20);
-        
-        assertEquals(Integer.valueOf(20), testTicketMachine.getBalance());     
-    }
-    
-    @Test
-    public void printTicketTest(){
-        TicketMachine testTicketMachine = new TicketMachine(13);
-        
-        assertEquals("Ticket price: 13 cents. Your total is 0.",testTicketMachine.printTicket());
-        assertEquals(Integer.valueOf(1), testTicketMachine.getTicketNumber());
-        assertEquals(Integer.valueOf(2), testTicketMachine.incrementTicketNumber());
-        assertNotEquals(Integer.valueOf(3), testTicketMachine.getTicketNumber());
-    }
-    
-    @Test
-    public void printTicketTest2(){
-        TicketMachine testTicketMachine = new TicketMachine(40);
-        
-        assertNotEquals("Ticket price: 13 cents. Your total is 0.", testTicketMachine.printTicket());
-        assertEquals(Integer.valueOf(1), testTicketMachine.getTicketNumber());
-    }
-    
-    @Test
-    public void incrementTicketNumberTest(){
-        TicketMachine testTicketMachine = new TicketMachine(40);
-        
-        for(int i = 0; i < 10; i++){
-            testTicketMachine.printTicket();
-    }
-    
-        assertEquals(Integer.valueOf(10), testTicketMachine.getTicketNumber());
-        assertNotEquals(Integer.valueOf(9), testTicketMachine.getTicketNumber());
-    }
-    
 }
