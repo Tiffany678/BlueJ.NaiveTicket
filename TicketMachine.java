@@ -60,6 +60,8 @@ public void insertMoney(int amount) {
  * reduce the current balance by the ticket price. Print
  * an error message if more money is required.
  */
+
+
 public void printTicket() {
     int amountLeftToPay=price-balance;
         if(amountLeftToPay <= 0) {
@@ -70,7 +72,7 @@ public void printTicket() {
                 balance = balance - price;
             }
     else {
-    System.out.println("You must insert at least: " +
+    System.out.println("You must insert at least: $ " +
                                    amountLeftToPay + " cents.");
     } 
 }
